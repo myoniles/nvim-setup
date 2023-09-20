@@ -1,6 +1,14 @@
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+lsp.preset({})
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+
+  vim.keymap.set('n', '<leader>cs', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+
+end)
+
 lsp.setup()
 
 local cmp = require('cmp')
