@@ -5,12 +5,12 @@ vim.keymap.set("n", "<leader>ha", mark.add_file)
 vim.keymap.set("n", "<leader>hp", mark.rm_file)
 vim.keymap.set("n", "<leader>hq", ui.toggle_quick_menu)
 
+vim.keymap.set("n", "]h", function() ui.nav_next() end)
+vim.keymap.set("n", "[h", function() ui.nav_next() end)
+
 vim.keymap.set("n", "<leader>h1", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<leader>h2", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end)
--- Why the Prime uses these is a mystery
--- vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
--- vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
--- vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
--- vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
+
+-- TODO SWITCH TO HARPOON TERMINALS

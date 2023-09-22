@@ -16,5 +16,10 @@ vim.keymap.set("n", "[t", vim.cmd.tabp)
 -- ":sh" made the disconnect a lot cleaner...
 -- This feels like breaking something
 vim.keymap.set("n", "<C-c>", ":term<CR>")
+vim.api.nvim_create_autocmd("TermOpen", {pattern = '*', callback = function()
+    vim.opt_local.nu = false
+    vim.opt_local.relativenumber = false
+end
+})
 
 -- TODO toggle spelling
