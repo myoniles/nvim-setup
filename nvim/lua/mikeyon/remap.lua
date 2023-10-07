@@ -15,7 +15,7 @@ vim.keymap.set("n", "[t", vim.cmd.tabp)
 -- I am genuinely sad that they do not have 'sh' as a command
 -- ":sh" made the disconnect a lot cleaner...
 -- This feels like breaking something
-vim.keymap.set("n", "<C-c>", ":term<CR>")
+-- vim.keymap.set("n", "<C-c>", ":term<CR>")
 vim.api.nvim_create_autocmd("TermOpen", {pattern = '*', callback = function()
     vim.opt_local.nu = false
     vim.opt_local.relativenumber = false
