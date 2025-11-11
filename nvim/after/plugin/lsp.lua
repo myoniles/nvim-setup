@@ -25,3 +25,10 @@ cmp.setup({
   }
 })
 
+
+require'lspconfig'.kotlin_language_server.setup{
+    settings= {
+        { kotlin = {compiler = {jvm = {target = "17"} } }
+        }
+    }
+}
