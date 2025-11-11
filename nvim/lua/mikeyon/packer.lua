@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
       }
 
   }
-  use 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim'
 
   use {
     "nvim-neo-tree/neo-tree.nvim",

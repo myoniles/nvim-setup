@@ -16,10 +16,12 @@ vim.keymap.set("n", "[t", vim.cmd.tabp)
 -- ":sh" made the disconnect a lot cleaner...
 -- This feels like breaking something
 -- vim.keymap.set("n", "<C-c>", ":term<CR>")
-vim.api.nvim_create_autocmd("TermOpen", {pattern = '*', callback = function()
-    vim.opt_local.nu = false
-    vim.opt_local.relativenumber = false
-end
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = '*',
+    callback = function()
+        vim.opt_local.nu = false
+        vim.opt_local.relativenumber = false
+    end
 })
 
 -- Move with blocks in visual mode
@@ -33,9 +35,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- No EX mode
 vim.keymap.set("n", "Q", "<nop>")
