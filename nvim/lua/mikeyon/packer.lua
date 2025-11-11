@@ -26,21 +26,27 @@ return require('packer').startup(function(use)
   use "mbbill/undotree"
   use "tpope/vim-fugitive"
 
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  use 'mason-org/mason.nvim'
 
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-    }
+  use {
+        'mason-org/mason-lspconfig.nvim',
+	requires = {
+
+		{'neovim/nvim-lspconfig'}
+	}
+
   }
+  use { 
+      'hrsh7th/nvim-cmp',
+      requires = {
+          {'hrsh7th/cmp-nvim-lsp'},
+          -- {'hrsh7th/cmp-vsnip'},
+          -- {'hrsh7th/vim-vsnip'}
+          {'L3MON4D3/LuaSnip'}
+      }
+
+  }
+  use 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim'
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
